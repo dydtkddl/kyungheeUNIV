@@ -1,29 +1,24 @@
+// Const 혹은 non-const로 선언된 객체와 
+// const & non-const 멤버메서드
 #include <iostream>
 class A {
-	int x, y;
 public:
-	A(int x, int y) : x(x), y(y) {};
-	void PrintX() {
-		std::cout << "non_const : " << x << std::endl;
+	int x;
+	A(int x = 10) :x(x) {};
+
+	// printX를 const한경우와 아닌경우를 모두 오버로딩
+	void printX() {
+		std::cout << "non-const : " << x << std::endl;
 	};
-	void PrintX() const {
+	void printX()const {
 		std::cout << "const : " << x << std::endl;
 	};
-	void PrintY() const{
-		std::cout << y << std::endl;
-	}
 };
 int main() {
-	A a(130, 984);
-	const A b(-132, 345);
-	a.PrintX();
-	a.PrintY();
-	b.PrintX();
-	b.PrintY();
-}	
-// 일반 정의된 A클래스 인스턴스는 const든 const아닌 메소드이든 둘다 사용할 수 있지만
-// 두개 다 오버로딩 되어있다면 const메소드를 후순위에 둔다.
-
-//const정의된 A클래스 인스턴스는 const메소드만 사용할 수 있으며, 오버로딩 되어있을떄
-// const멤버함수를 찾아 사용한다.
-//const멤버함수가 정의되어있지 않은데 사용하려고 하면 이는 컴파일 오류가 난다/
+	A a(12); // 생성자에 의해서 x= 12로 생성됌
+	const A a_const; // default 생성자에 의해서 x = 10으로 생성됌
+	a.printX(); // non-const객체이기 때문에, 두 오버로딩 함수 중에서 non-const함수가 끌고와짐
+	a_const.printX(); // cosnt객체이기 때문에, 두 오버로딩 함수 중에서 const함수가 끌고와짐.
+}
+// non-const객체는 const함수와 non-const함수를 둘다 사용할 수 있지만, 둘 다있다면 non-const함수를 먼저 사용.
+// const객체는 오직 const함수 메서드만 사용가능

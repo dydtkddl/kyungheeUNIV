@@ -15,11 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="c++.cpp">
       <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="nullptr_delete.cpp">
-      <Filter>리소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
