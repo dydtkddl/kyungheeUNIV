@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ec78a03d-7278-4def-8712-195a65020c6f}</ProjectGuid>
-    <RootNamespace>My10강</RootNamespace>
+    <ProjectGuid>{dc2ca0d9-8bff-4eae-8f18-f92b8afc2895}</ProjectGuid>
+    <RootNamespace>C공부</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="10강.cpp" />
+    <ClCompile Include="c++.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
