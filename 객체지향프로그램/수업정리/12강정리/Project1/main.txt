@@ -1,0 +1,36 @@
+상속과 다용성
+
+파생관계
+1. I/O stream Inheritance
+#include <iostream>
+#include <fstream>
+
+ios_base에서 ios를 만들고 
+ios 에서 istream 과 ostream을 만들고
+istream에서는 iostream을 만든다.
+istream에서 file에 대한 입력을 추가한게 ifstream
+ostream에서 파일에 대한 출력을 추가한게 ofstream
+iostream을 토대로 fstream을 만듦
+iostream에서 stringstream을만듦
+이런 상속관계.
+
+void print(std::ostream& os, int n){
+	os << n << '\n;
+}
+int main(){
+	print(std::cout, 35);
+	std::ofstream
+		fout("temp.txt");
+	if (fout.good()){
+		print(fout, 36);
+		fout.close();}
+	}
+여기서 파라미터는 ostream으로 만들어놨는데
+그 파생클래스인 ofstream이나 std::cout 이 들어가게 되면
+그들이 제 구실을 할 수 있는지 그런 부분이 궁금해졌다
+
+
+class B{
+
+};
+
