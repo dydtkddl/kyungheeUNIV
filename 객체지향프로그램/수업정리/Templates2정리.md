@@ -71,8 +71,16 @@ for (auto iter = std::begin(lst); iter !=std::end(lst);iter ++)
             class Compare = std::less<key>,
             class Allocator = std::allocator<std::pair< const key, T>>
         > class map;
-    예시
-    //std::pair클래스의 멤버. first, second
+    std::pair구조체의 형식
+        //std::pair클래스의 멤버. first, second
+        template <class T1, class T2>
+            struct pair {
+                T1 first;
+                T2 second;
+                
+                // 생성자, 비교 연산자 등의 멤버 함수들...
+            };
+    맵 예시
     int main(){
         std::map<std::string , int > y;
         y.insert(std::pair<std::string, int>("+", 10));
@@ -91,3 +99,24 @@ for (auto iter = std::begin(lst); iter !=std::end(lst);iter ++)
             std::cout << it->first << ", " << it->second << ", ";
     }
 
+
+Priority_queue
+    형식
+        template<
+            class T, 
+            class Container = std::vector<T>,
+            class Compare = std::less<typename Container::value_type> //std::less<T>써도댐.
+            >class priority_queue 
+        >
+        //std::priority_queue는 C++ 표준 라이브러리에서 제공되는 클래스 템플릿입니다. 이 클래스는 우선순위 큐(priority queue)를 구현하는 데 사용됩니다. 우선순위 큐는 값을 저장하고 검색하는 동안 우선순위가 가장 높은 요소에 빠르게 접근할 수 있는 데이터 구조입니다.
+
+    예시
+        int main(){
+            std::priority_queue<int> queue; // container : vector, compare : less
+            queue.push(11); 
+            queue.push(2); 
+            queue.push(4); 
+            queue.push(5); 
+            queue.push(6); 
+
+        }
